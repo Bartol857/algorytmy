@@ -3,26 +3,40 @@ import java.util.Scanner;
 public class liczbyPierwsze {
     public static void main(String[] args) {
 
-        zadanie1();
-
-
+//        zadanie1();
+        zadanie2(100000);
     }
 
     public static void zadanie1() {
 
-        Scanner dane = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Podaj liczbę całkowitą: ");
-        int x = dane.nextInt();
+        int zmienna = scanner.nextInt();
 
-        boolean pierwsza = true;
-        for(int i = 2; i * i <= x; i++)
-            if(x % i == 0)
-                pierwsza = false;
-
-        if(pierwsza)
-            System.out.println("TAK");
-        else
-            System.out.println("NIE");
+        if (zmienna > 3 && zmienna % 2 ==0){
+            System.out.print("Liczba "+ zmienna + " nie jest liczbą pierwszą.");
+        }else if (zmienna > 3 && zmienna % 3 == 0){
+            System.out.print("Liczba "+ zmienna + " nie jest liczbą pierwszą.");
+        }else if (zmienna > 3 && zmienna % 5 == 0){
+            System.out.print("Liczba "+ zmienna + " nie jest liczbą pierwszą.");
+        }else {
+            System.out.print("Liczba "+ zmienna + " jest liczbą pierwszą.");
+        }
     }
-}
 
+    public static void zadanie2(int v){
+        int[] tab = new int[100001];
+
+        for (int i = 2; i < tab.length; i++){
+            for (int j = i * 2; j < tab.length; j += i){
+                tab[j] = 1;
+            }
+        }
+        if (tab [v] == 0){
+            System.out.println("Liczba " + v + "jest liczbą pierwszą");
+        }else{
+            System.out.println("Liczba " + v + " nie jest liczbą pierwszą");
+        }
+    }
+
+}
