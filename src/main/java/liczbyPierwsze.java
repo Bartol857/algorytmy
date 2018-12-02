@@ -27,13 +27,13 @@ public class liczbyPierwsze {
     public static void zadanie2(int v){
         int[] tab = new int[100001];
 
-        for (int i = 2; i < tab.length; i++){
-            for (int j = i * 2; j < tab.length; j += i){
+        for (int i = 2; i * i < tab.length; i++){
+            for (int j = i * i; j  < tab.length; j += i){
                 tab[j] = 1;
             }
         }
         if (tab [v] == 0){
-            System.out.println("Liczba " + v + "jest liczbą pierwszą");
+            System.out.println("Liczba " + v + " jest liczbą pierwszą");
         }else{
             System.out.println("Liczba " + v + " nie jest liczbą pierwszą");
         }
