@@ -1,7 +1,7 @@
 public class rekurencje {
     public static void main(String[] args) {
-        gcd2(4);
-        System.out.println(gcd2(4));
+        String slowo = "oget ejazc ein";
+        wspak(slowo,slowo.length()-1);
 
 
     }
@@ -13,6 +13,13 @@ public class rekurencje {
         static int gcd2 (int a){
             return a > 1 ? gcd2(a - 1) + gcd2(a - 2): 1;
         }
+
+    static void wspak(String slowo, int i){
+        System.out.print(slowo.charAt(i));
+        if(i > 0)
+            wspak(slowo,i-1);
+
+    }
 
 
 }
