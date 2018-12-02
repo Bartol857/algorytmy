@@ -10,16 +10,19 @@ public class liczbyPierwsze {
 
     public static void zadanie1() {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner dane = new Scanner(System.in);
         System.out.print("Podaj liczbę całkowitą: ");
-        int zmienna = scanner.nextInt();
+        int x = dane.nextInt();
 
+        boolean pierwsza = true;
+        for(int i = 2; i * i <= x; i++)
+            if(x % i == 0)
+                pierwsza = false;
 
-            if (zmienna > 3 && zmienna % 2 == 0 && zmienna % 3 == 0 && zmienna % 5 == 0) {
-                System.out.print("Liczba "+ zmienna + " nie jest liczbą pierwszą.");
-            } else
-                System.out.print("Liczba "+ zmienna + " jest liczbą pierwszą.");
-
+        if(pierwsza)
+            System.out.println("TAK");
+        else
+            System.out.println("NIE");
     }
-
 }
+
